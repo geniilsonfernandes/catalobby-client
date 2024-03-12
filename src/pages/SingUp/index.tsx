@@ -1,5 +1,5 @@
 const SingUp = () => {
-  return <div>registro</div>;
+  return <div className="container">registro</div>;
 };
 
 export default SingUp;
