@@ -1,5 +1,5 @@
-import RegisterForm from '@/components/forms/RegisterForm';
-import RegisterSuccess from '@/components/forms/RegisterSuccess';
+import RegisterForm from '@/components/forms/Register';
+import RegisterSuccess from '@/components/forms/Success';
 import { useState } from 'react';
 
 const SingUp = () => {
