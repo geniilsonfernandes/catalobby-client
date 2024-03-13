@@ -6,6 +6,12 @@ export default {
       container: {
         center: true,
         padding: '1rem'
+      },
+      colors: {
+        primary: {
+          100: '#EC520B',
+          200: '#D55A0E'
+        }
       }
     }
   },
