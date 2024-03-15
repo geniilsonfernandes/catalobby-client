@@ -1,6 +1,8 @@
 import TermsAndConditions from '@/components/TermsAndConditions';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
+import { routeNames } from '@/routes/routeNames';
+import { Link } from 'react-router-dom';
 
 const RegisterForm = ({ onSuccess }: { onSuccess: () => void }) => {
   return (
@@ -19,9 +21,9 @@ const RegisterForm = ({ onSuccess }: { onSuccess: () => void }) => {
       </div>
       <div className="text-sm text-gray-400">
         <span>Já tem uma conta?</span>
-        <a className="ml-1 text-primary-100" href="/login">
+        <Link to={routeNames.login} className="ml-1 text-primary-100">
           Entrar
-        </a>
+        </Link>
       </div>
     </div>
   );

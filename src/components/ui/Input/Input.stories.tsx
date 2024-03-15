@@ -8,18 +8,24 @@ const meta: Meta<typeof Input> = {
     layout: 'centered'
   },
 
-
   argTypes: {}
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Text: Story = {
+export const Default: Story = {
   args: {
     placeholder: 'Placeholder',
     type: 'text'
-  }
+  },
+  render: (args) => (
+    <Input.Root variant={args.variant}>
+      <Input.Label htmlFor="name">Nome e sobrenome</Input.Label>
+      <Input placeholder="Nome e sobrenome" type="text" id="name" {...args} />
+      <Input.HelperText>ex:Genilson Fernandes</Input.HelperText>
+    </Input.Root>
+  )
 };
 
 export const Password: Story = {
@@ -33,7 +39,7 @@ export const Compostion: Story = {
   render: (args) => (
     <Input.Root variant={args.variant}>
       <Input.Label htmlFor="name">Nome e sobrenome</Input.Label>
-      <Input placeholder='Nome e sobrenome' type='text' id='name' {...args}/>
+      <Input placeholder="Nome e sobrenome" type="text" id="name" {...args} />
       <Input.HelperText>ex:Genilson Fernandes</Input.HelperText>
     </Input.Root>
   )

@@ -1,32 +1,32 @@
-import SingUp from '@/pages/SingUp';
+import { Navigate, Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { routeNames } from './routeNames';
 
-import {
-  Navigate,
-  Outlet,
-  RouteObject,
-  RouterProvider,
-  createBrowserRouter
-} from 'react-router-dom';
+import LogIn from '@/pages/LogIn';
+import SingUp from '@/pages/SingUp';
 
 const PublicLayout = () => {
   return <Outlet />;
 };
 
-function PublicRoute(): {
-  element: JSX.Element;
-  children: RouteObject[];
-} {
-  return {
-    element: <PublicLayout />,
-    children: [
-      { path: '/sign-up', element: <SingUp /> },
-      { path: '*', element: <Navigate to="/sign-up" replace /> }
-    ]
-  };
-}
-
 export function AppRouter() {
-  const router = createBrowserRouter([PublicRoute()]);
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <PublicLayout />,
+      children: [
+        {
+          path: routeNames.signup,
+          element: <SingUp />
+        },
+        {
+          path: routeNames.login,
+          element: <LogIn />
+        }
+      ],
+      errorElement: <Navigate to="/LogIn" replace />,
+      ErrorBoundary: () => <div>Error</div>
+    }
+  ]);
 
   return <RouterProvider router={router} />;
 }
