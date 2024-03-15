@@ -1,18 +1,25 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Controls, Primary } from '@storybook/addon-docs/blocks';
 import { Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';
+import * as InputStories from './Input.stories.tsx';
 
-<Meta title="UI/Input" />
+<Meta title="UI/Input" of={InputStories} />
 
 # What problem does it solve?
 
 Grouping related elements, such as labels, input fields, and help text, within a component can make the code more organized and easier to understand.
-## Props
 
-- `type` (string, required): Type of input ('text', 'password', etc.).
-- `variant` (string, optional): Variant of the input. ('default' | 'error' | 'success')
+___
 
-## Example
+# Component
+
+<Primary />
+
+# Props
+
+<Controls />
+
+# Example
 
 ```jsx
 import Input from '@/components/ui/Input';
