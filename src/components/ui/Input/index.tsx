@@ -33,9 +33,13 @@ type InputProps = {
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
- *
- * this component is a custom input
- */
+ * Custom Input component.
+ * @component
+ * @param {Object} props - Props for the Input component.
+ * @param {string} props.type - Type of input (e.g., 'text', 'password', etc.).
+ * @param {string} [props.variant] - Variant of the input.
+ * @returns {JSX.Element} - Custom input component.
+ */ 
 
 const Input = (props: InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
