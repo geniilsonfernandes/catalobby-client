@@ -9,8 +9,8 @@ export default {
       },
       colors: {
         primary: {
-          100: '#EC520B',
-          200: '#D55A0E'
+          100: '#05A76D',
+          200: '#00A15B'
         }
       }
     }
