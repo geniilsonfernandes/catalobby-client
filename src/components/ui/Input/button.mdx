@@ -1,0 +1,25 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Eye, EyeOff } from 'lucide-react';
+import { useState } from 'react';
+
+<Meta title="UI/Input" />
+
+# What problem does it solve?
+
+Grouping related elements, such as labels, input fields, and help text, within a component can make the code more organized and easier to understand.
+## Props
+
+- `type` (string, required): Type of input ('text', 'password', etc.).
+- `variant` (string, optional): Variant of the input. ('default' | 'error' | 'success')
+
+## Example
+
+```jsx
+import Input from '@/components/ui/Input';
+
+<Input.Root>
+  <Input.Label htmlFor="name">Nome e sobrenome</Input.Label>
+  <Input placeholder="Nome e sobrenome" type="text" id="name" />
+  <Input.HelperText>Nome e sobrenome</Input.HelperText>
+</Input.Root>;
+```

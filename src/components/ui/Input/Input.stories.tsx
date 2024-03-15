@@ -7,7 +7,7 @@ const meta: Meta<typeof Input> = {
   parameters: {
     layout: 'centered'
   },
-  tags: ['autodocs'],
+
 
   argTypes: {}
 };
@@ -15,7 +15,7 @@ const meta: Meta<typeof Input> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Text: Story = {
   args: {
     placeholder: 'Placeholder',
     type: 'text'
