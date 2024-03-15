@@ -2,7 +2,7 @@ import Brand from '@/components/Brand';
 import Highlight from '@/components/Highlight';
 import Testemunhais from '@/components/Testemunhais';
 import RegisterForm from '@/components/forms/Register';
-import RegisterSuccess from '@/components/forms/Success';
+import SuccessComponent from '@/components/forms/Success';
 import { useState } from 'react';
 
 const SingUp = () => {
@@ -38,7 +38,7 @@ const SingUp = () => {
             <Brand />
           </div>
 
-          {sucess ? <RegisterSuccess /> : <RegisterForm onSuccess={() => setSucess(true)} />}
+          {sucess ? <SuccessComponent /> : <RegisterForm onSuccess={() => setSucess(true)} />}
         </div>
       </div>
     </div>

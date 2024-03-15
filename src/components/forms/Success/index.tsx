@@ -1,6 +1,6 @@
 import { BadgeCheck } from 'lucide-react';
 
-const RegisterSuccess = () => {
+const SuccessComponent = () => {
   return (
     <div className="w-full  max-w-md">
       <div className="w-12 h-12 bg-primary-100/10 flex justify-center items-center rounded text-primary-100/50 mb-9">
@@ -17,4 +17,4 @@ const RegisterSuccess = () => {
   );
 };
 
-export default RegisterSuccess;
+export default SuccessComponent;
