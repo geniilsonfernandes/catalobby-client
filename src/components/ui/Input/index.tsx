@@ -51,7 +51,9 @@ const Input = (props: InputProps) => {
       {isPassword && (
         <button
           className="w-8 h-8  hover:bg-gray-200 flex justify-center items-center rounded"
-          onClick={() => setShowPassword(!showPassword)}>
+          onClick={() => setShowPassword(!showPassword)}
+          name="password-toggle-button"
+          aria-label="toggle password">
           {showPassword ? (
             <Eye size={16} className="text-gray-500" />
           ) : (
