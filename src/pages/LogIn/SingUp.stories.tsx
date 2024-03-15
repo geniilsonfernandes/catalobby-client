@@ -1,26 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
-import Register from '.';
+import LogIn from '.';
 
 const meta = {
-  title: 'Form/Register',
-  component: Register,
-  parameters: {
-    layout: 'centered'
-  },
+  title: 'Pages/LogIn',
+  component: LogIn,
+
+  tags: ['autodocs'],
   argTypes: {}
-} satisfies Meta<typeof Register>;
+} satisfies Meta<typeof LogIn>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    onSuccess: () => {}
-  },
+  args: {},
   render: (args) => (
     <BrowserRouter>
-      <Register {...args} />
+      <LogIn {...args} />
     </BrowserRouter>
   )
 };

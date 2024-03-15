@@ -64,7 +64,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 
 Input.displayName = 'Input';
 
-const RootVariants = cva('space-y-2', {
+const RootVariants = cva('space-y-2 w-full', {
   variants: {
     variant: {
       default: 'text-gray-500',

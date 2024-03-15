@@ -1,15 +1,46 @@
 import Button from '@/components/ui/Button';
-import Input from '@/components/ui/Input';
+import Input, * as InputWrapper from '@/components/ui/Input';
 import { routeNames } from '@/routes/routeNames';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import * as z from 'zod';
+
+const schema = z.object({
+  email: z.string().min(1, 'Email obrigatório').email('Email inválido'),
+  password: z.string().min(1, 'Senha obrigatória')
+});
 
 const LoginForm = ({ onSuccess }: { onSuccess: () => void }) => {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors }
+  } = useForm<z.infer<typeof schema>>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      email: '',
+      password: ''
+    }
+  });
+
+  const onSubmit = (data: z.infer<typeof schema>) => {
+    alert(JSON.stringify(data, null, 2));
+    onSuccess();
+  };
+
   return (
     <div className="w-full max-w-md">
       <div className="space-y-3 py-8">
-        <Input placeholder="Email" type="email" />
-        <Input placeholder="Senha" type="password" />
-        <Button width="full" onClick={onSuccess}>
+        <InputWrapper.Root variant={errors?.email ? 'error' : 'default'}>
+          <Input placeholder="Email" type="email" {...register('email')} />
+          <InputWrapper.HelperText>{errors?.email?.message}</InputWrapper.HelperText>
+        </InputWrapper.Root>
+        <InputWrapper.Root variant={errors?.email ? 'error' : 'default'}>
+          <Input placeholder="Senha" type="password" {...register('password')} />
+          <InputWrapper.HelperText>{errors?.password?.message}</InputWrapper.HelperText>
+        </InputWrapper.Root>
+        <Button width="full" onClick={handleSubmit(onSubmit)}>
           Login
         </Button>
       </div>
