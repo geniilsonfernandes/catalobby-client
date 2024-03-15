@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 import { Eye, EyeOff } from 'lucide-react';
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 
 type InputLabelProps = {
   children: React.ReactNode;
@@ -32,24 +32,17 @@ type InputProps = {
   variant?: Variants;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-/**
- * Custom Input component.
- * @component
- * @param {Object} props - Props for the Input component.
- * @param {string} props.type - Type of input (e.g., 'text', 'password', etc.).
- * @param {string} [props.variant] - Variant of the input.
- * @returns {JSX.Element} - Custom input component.
- */
-
-const Input = (props: InputProps) => {
+const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const [showPassword, setShowPassword] = useState(false);
   const isPassword = props.type === 'password';
+
   return (
     <div className="w-full bg-gray-100 h-12 px-2 flex items-center rounded-md">
       <input
         {...props}
         className={inputVariants({ variant: props.variant })}
         type={isPassword ? (showPassword ? 'text' : 'password') : props.type}
+        ref={ref} // Encaminha a ref para o elemento input interno
       />
 
       {isPassword && (
@@ -67,7 +60,9 @@ const Input = (props: InputProps) => {
       )}
     </div>
   );
-};
+});
+
+Input.displayName = 'Input';
 
 const RootVariants = cva('space-y-2', {
   variants: {
@@ -86,20 +81,16 @@ type InputRootProps = {
   variant?: Variants;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const Root = (props: InputRootProps) => {
+export const Root = (props: InputRootProps) => {
   return <div className={RootVariants({ variant: props.variant })} {...props} />;
 };
 
-const Label = (props: InputLabelProps) => {
+export const Label = (props: InputLabelProps) => {
   return <label className="text-sm text-inherit" {...props} />;
 };
 
-const HelperText = ({ children }: HelperTextProps) => {
-  return <span className="text-xs text-inherit">{children}</span>;
+export const HelperText = ({ children }: HelperTextProps) => {
+  return <div className="text-xs text-inherit">{children}</div>;
 };
-
-Input.Root = Root;
-Input.Label = Label;
-Input.HelperText = HelperText;
 
 export default Input;

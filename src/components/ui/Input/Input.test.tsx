@@ -1,7 +1,7 @@
 import { act, render, screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 
-import Input from '.';
+import Input, * as InputWrapper from '.';
 
 describe('Input render', () => {
   test('should render input with variant outline', () => {
@@ -13,11 +13,11 @@ describe('Input render', () => {
 
   test('should render input with composition pattern', () => {
     render(
-      <Input.Root>
-        <Input.Label htmlFor="name">Nome e sobrenome</Input.Label>
+      <InputWrapper.Root>
+        <InputWrapper.Label htmlFor="name">Nome e sobrenome</InputWrapper.Label>
         <Input placeholder="name" />
-        <Input.HelperText>ex:Genilson Fernandes</Input.HelperText>
-      </Input.Root>
+        <InputWrapper.HelperText>ex:Genilson Fernandes</InputWrapper.HelperText>
+      </InputWrapper.Root>
     );
     const labelEl = screen.getByText('Nome e sobrenome');
     const inputEl = screen.getByPlaceholderText('name');

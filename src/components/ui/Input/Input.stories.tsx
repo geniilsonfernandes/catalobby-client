@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Input from '.';
+import Input, * as InputWrapper from '.';
 
 const meta: Meta<typeof Input> = {
   title: 'UI/Input',
@@ -20,11 +20,11 @@ export const Default: Story = {
     type: 'text'
   },
   render: (args) => (
-    <Input.Root variant={args.variant}>
-      <Input.Label htmlFor="name">Nome e sobrenome</Input.Label>
+    <InputWrapper.Root variant={args.variant}>
+      <InputWrapper.Label htmlFor="name">Nome e sobrenome</InputWrapper.Label>
       <Input placeholder="Nome e sobrenome" type="text" id="name" {...args} />
-      <Input.HelperText>ex:Genilson Fernandes</Input.HelperText>
-    </Input.Root>
+      <InputWrapper.HelperText>ex:Genilson Fernandes</InputWrapper.HelperText>
+    </InputWrapper.Root>
   )
 };
 
@@ -37,10 +37,10 @@ export const Password: Story = {
 
 export const Compostion: Story = {
   render: (args) => (
-    <Input.Root variant={args.variant}>
-      <Input.Label htmlFor="name">Nome e sobrenome</Input.Label>
+    <InputWrapper.Root variant={args.variant}>
+      <InputWrapper.Label htmlFor="name">Nome e sobrenome</InputWrapper.Label>
       <Input placeholder="Nome e sobrenome" type="text" id="name" {...args} />
-      <Input.HelperText>ex:Genilson Fernandes</Input.HelperText>
-    </Input.Root>
+      <InputWrapper.HelperText>ex:Genilson Fernandes</InputWrapper.HelperText>
+    </InputWrapper.Root>
   )
 };
