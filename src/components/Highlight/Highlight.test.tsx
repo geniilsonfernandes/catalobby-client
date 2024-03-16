@@ -7,8 +7,8 @@ const mock = {
   description: 'desc',
   title: 'title'
 };
-describe('Testemunhais render', () => {
-  test('should render Testemunhais props', () => {
+describe('Highlight render', () => {
+  test('should render Highlight props', () => {
     render(<Highlight {...mock} />);
     const descriptionEl = screen.getByText('desc');
     const titleEl = screen.getByText('title');

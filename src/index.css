@@ -8,11 +8,20 @@
     @apply bg-white;
   }
   * {
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  
-}
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
+  :root {
+    --header-height: 80px;
+  }
+
+  .header {
+    height: var(--header-height);
+  }
+  .content {
+    min-height: calc(100vh - var(--header-height));
+  }
 }

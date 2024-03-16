@@ -20,8 +20,8 @@ const MenuButton = ({
   return (
     <button
       className={cn(
-        'w-full flex items-center justify-between space-x-2 p-2 py-3 my-[1px] hover:bg-gray-50 rounded-md',
-        isActive && 'bg-gray-50'
+        'w-full flex items-center justify-between space-x-2 p-2 py-3 my-[1px] text-slate-600 hover:bg-gray-50 rounded-md',
+        isActive && 'bg-gray-50 '
       )}
       {...props}>
       <div className="flex items-center gap-2 text-slate-600">
