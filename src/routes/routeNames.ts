@@ -1,4 +1,5 @@
 export const routeNames = {
   login: '/login',
-  signup: '/signup'
+  signup: '/signup',
+  store: '/store'
 };
