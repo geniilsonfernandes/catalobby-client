@@ -15,5 +15,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {}
+  args: {
+    title: 'Parabéns!',
+    description: 'Seu cadastro foi concluído com sucesso!',
+    callbackText: 'Voltar',
+    callback: () => {}
+  }
 };

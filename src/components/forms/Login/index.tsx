@@ -24,8 +24,7 @@ const LoginForm = ({ onSuccess }: { onSuccess: () => void }) => {
     }
   });
 
-  const onSubmit = (data: z.infer<typeof schema>) => {
-    alert(JSON.stringify(data, null, 2));
+  const onSubmit = (_: z.infer<typeof schema>) => {
     onSuccess();
   };
 

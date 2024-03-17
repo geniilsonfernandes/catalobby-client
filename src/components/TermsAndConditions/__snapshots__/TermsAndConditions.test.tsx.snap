@@ -1,0 +1,32 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TermsAndConditions render > should render correctly 1`] = `
+<div>
+  <p
+    class="text-sm text-gray-400 "
+  >
+    Clicando em 
+    <b>
+      Criar minha conta
+    </b>
+    , voce concorda com os
+     
+    <a
+      class=" text-primary-100"
+      href="/login"
+    >
+      Termos de Serviço
+    </a>
+     
+    e os
+     
+    <a
+      class=" text-primary-100"
+      href="/login"
+    >
+       
+      politicas de privacidade.
+    </a>
+  </p>
+</div>
+`;
