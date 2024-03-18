@@ -13,7 +13,7 @@
 
   <p align="center">
   ParaFacilitar o aluguel de uma variedade de itens para clientes que precisam temporariamente, proporcionando conveniência e economia. Desenvolvido com cuidado meticuloso para proporcionar uma experiência auto-intuitiva e envolvente.
-  <h2>
+  <p>
  <p align="center">
 Um software de aluguel online que funciona para todos os nichos de aluguel populares
 </p>
