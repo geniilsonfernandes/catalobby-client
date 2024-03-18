@@ -1,9 +1,10 @@
 import { Navigate, Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { routeNames } from './routeNames';
 
+import StoreLayout from '@/layout/StoreLayout';
 import LogIn from '@/pages/LogIn';
+import Product from '@/pages/Product';
 import SingUp from '@/pages/SingUp';
-import Store from '@/pages/Store';
 
 const PublicLayout = () => {
   return <Outlet />;
@@ -28,16 +29,26 @@ export function AppRouter() {
           element: <LogIn />
         },
         {
-          path: routeNames.store,
-          element: <Store />
-        },
-        {
           path: '*',
           element: <Navigate to="/login" replace />
         }
       ],
       errorElement: <Navigate to="/login" replace />,
       ErrorBoundary: () => <div>Error</div>
+    },
+    {
+      path: '/store',
+      element: <StoreLayout />,
+      children: [
+        {
+          path: 'product',
+          element: <Product />
+        },
+        {
+          path: '*',
+          element: <Navigate to="/store" replace />
+        }
+      ]
     }
   ]);
 

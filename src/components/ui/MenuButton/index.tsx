@@ -24,13 +24,9 @@ const MenuButton = ({
         isActive && 'bg-gray-50 '
       )}
       {...props}>
-      <div className="flex items-center gap-2 text-slate-600">
+      <div className="flex items-center gap-2 text-slate-500">
         {icon}
-        <div
-          className={cn(
-            'text-xs font-semibold',
-            isChildren && 'text-slate-400 text-xs font-medium'
-          )}>
+        <div className={cn('text-sm font-medium', isChildren && 'text-slate-400 text-xs')}>
           {title}
         </div>
       </div>

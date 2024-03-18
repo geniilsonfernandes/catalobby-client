@@ -16,7 +16,7 @@ type MenuProps = {
 
 const Menu = ({ title, menus = [] }: MenuProps) => {
   return (
-    <div className="p-4 h-full flex flex-col">
+    <div className="p-4 w-full flex flex-col">
       <div className="text-xs uppercase font-medium text-gray-400 mb-4">{title}</div>
       <div className="flex-1">
         {menus.map((item, index) => (
