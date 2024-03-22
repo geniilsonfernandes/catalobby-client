@@ -8,7 +8,7 @@ import { Outlet } from 'react-router-dom';
 const StoreLayout = () => {
   return (
     <div className="h-screen">
-      <div className="grid grid-cols-12 ">
+      <div className="grid grid-cols-12">
         <div className="col-span-2 border-r border-gray-100">
           <div className="border-b border-gray-100 header flex p-4">
             <Brand />
@@ -23,10 +23,10 @@ const StoreLayout = () => {
               <Search size={18} className="text-primary-100" />
             </button>
             <div className="flex gap-2">
-              <Button variant="ghost" width="auto" size="small">
-                Minha loja <Store size={16} />
+              <Button variant="outline" width="auto" size="small">
+                Meu catalogo <Store size={16} />
               </Button>
-              <button className="w-8 h-8  flex-nowrap bg-primary-100/10 flex justify-center items-center rounded text-primary-100/50">
+              <button className="w-8 h-8  flex-nowrap bg-primary-100/10 flex justify-center items-center rounded-sm text-primary-100/50">
                 <User2 size={16} />
               </button>
             </div>

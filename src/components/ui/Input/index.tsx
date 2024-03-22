@@ -10,21 +10,18 @@ type HelperTextProps = {
   children: React.ReactNode;
 };
 
-const inputVariants = cva(
-  'flex-1 px-1 bg-transparent text-base rounded-md placeholder:text-sm outline-none',
-  {
-    variants: {
-      variant: {
-        default: 'text-gray-500 placeholder:text-gray-500',
-        error: 'text-red-500 placeholder:text-red-500',
-        success: 'text-green-500 placeholder:text-green-500'
-      }
-    },
-    defaultVariants: {
-      variant: 'default'
+const inputVariants = cva('flex-1 px-1 bg-transparent text-base placeholder:text-sm outline-none', {
+  variants: {
+    variant: {
+      default: 'text-gray-500 placeholder:text-gray-500',
+      error: 'text-red-500 placeholder:text-red-500',
+      success: 'text-green-500 placeholder:text-green-500'
     }
+  },
+  defaultVariants: {
+    variant: 'default'
   }
-);
+});
 
 type Variants = 'default' | 'error' | 'success';
 
@@ -37,7 +34,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const isPassword = props.type === 'password';
 
   return (
-    <div className="w-full bg-gray-100 h-12 px-2 flex items-center rounded-md">
+    <div className="w-full bg-gray-100 h-12 px-2 flex items-center rounded-sm">
       <input
         {...props}
         className={inputVariants({ variant: props.variant })}
@@ -47,7 +44,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 
       {isPassword && (
         <button
-          className="w-8 h-8  hover:bg-gray-200 flex justify-center items-center rounded"
+          className="w-8 h-8  hover:bg-gray-200 flex justify-center items-center rounded-sm"
           onClick={() => setShowPassword(!showPassword)}
           name="password-toggle-button"
           aria-label="toggle password">

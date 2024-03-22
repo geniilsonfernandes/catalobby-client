@@ -1,7 +1,7 @@
 import { VariantProps, cva } from 'class-variance-authority';
 
 const buttonVariants = cva(
-  'h-12 rounded-md transition duration-300 px-4 text-sm disabled:cursor-not-allowed disabled:opacity-50 flex justify-center items-center gap-2',
+  'h-12 rounded-sm transition duration-300 px-2 text-sm disabled:cursor-not-allowed disabled:opacity-50 flex justify-center items-center gap-2',
   {
     variants: {
       variant: {
@@ -40,13 +40,13 @@ type ButtonProps = {
 const Button = (props: ButtonProps) => {
   return (
     <button
+      {...props}
       className={buttonVariants({
         className: props.className,
         variant: props.variant,
         width: props.width,
         size: props.size
       })}
-      {...props}
     />
   );
 };
